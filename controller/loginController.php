@@ -23,7 +23,7 @@ class loginController extends loginModel
         );
         //ENVIAMOS EL ARRAY HACIA EL MODELO
         $datosCuenta = loginModel::iniciar_sesion_model($datosLogin);
-        if ($datosCuenta->rowCount() == 1) {
+        if ($datosCuenta->rowCount() > 0) {
             //ALMACENAMOS LOS DATOS DE LOGIN
             $row = $datosCuenta->fetch();
             $fechaActual = date("Y-m-d");
